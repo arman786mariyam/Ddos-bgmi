@@ -285,7 +285,7 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @SAURAV_YADAVK
+Buy From :- @II_MR_ARMAN_II
 Official Channel :- @SACRIFICECHEAT
 '''
     for handler in bot.message_handlers:
