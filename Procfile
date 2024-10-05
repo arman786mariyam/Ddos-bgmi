@@ -1,1 +1,1 @@
-web : python3 watcher.py
+web: python3 watcher.py
