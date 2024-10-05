@@ -285,8 +285,8 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @FENIXsSLAYER
-Official Channel :- @SUDO_APT_UPDATE
+Buy From :- @SAURAV_YADAVK
+Official Channel :- @SACRIFICECHEAT
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -303,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- @SUDO_APT_UPDATE'''
+✅Join :- @SACRIFICECHEAT'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -328,8 +328,8 @@ Vip 🌟 :
 
 Pr-ice List💸 :
 Day-->120 Rs
-Week-->400 Rs
-Month-->1100 Rs
+Week-->200 Rs
+Month-->600 Rs
 '''
     bot.reply_to(message, response)
 
