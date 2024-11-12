@@ -122,12 +122,12 @@ def remove_user(message):
                         file.write(f"{user_id}\n")
                 response = f"User {user_to_remove} removed successfully 👍."
             else:
-                response = f"User {user_to_remove} not found in the list ❌."
+                response = f"User {user_to_remove} removed successfully 👍."
         else:
             response = '''Please Specify A User ID to Remove. 
 ✅ Usage: /remove <userid>'''
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "Please Specify A User ID to Remove.
 
     bot.reply_to(message, response)
 
@@ -247,7 +247,7 @@ def handle_bgmi(message):
         else:
             response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
     else:
-        response = "❌ You Are Not Authorized To Use This Command ❌."
+        response = "✅ Usage :- /bgmi <target> <port> <time>"
 
     bot.reply_to(message, response)
 
@@ -259,7 +259,7 @@ def show_command_logs(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
         try:
-            with open(LOG_FILE, "r") as file:
+            with , "r") as file:
                 command_logs = file.readlines()
                 user_logs = [log for log in command_logs if f"UserID: {user_id}" in log]
                 if user_logs:
