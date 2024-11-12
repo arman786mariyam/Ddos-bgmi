@@ -127,7 +127,7 @@ def remove_user(message):
             response = '''Please Specify A User ID to Remove. 
 ✅ Usage: /remove <userid>'''
     else:
-        response = "Please Specify A User ID to Remove.
+        response = "❌ You Are Not Authorized To Use This Command ❌.
 
     bot.reply_to(message, response)
 
