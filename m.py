@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 
 import telebot
 import subprocess
@@ -122,12 +122,12 @@ def remove_user(message):
                         file.write(f"{user_id}\n")
                 response = f"User {user_to_remove} removed successfully 👍."
             else:
-                response = f"User {user_to_remove} removed successfully 👍."
+                response = f"User {user_to_remove} not found in the list ❌."
         else:
             response = '''Please Specify A User ID to Remove. 
 ✅ Usage: /remove <userid>'''
     else:
-        response = "❌ You Are Not Authorized To Use This Command ❌.
+        response = "Only Admin Can Run This Command 😡."
 
     bot.reply_to(message, response)
 
@@ -247,7 +247,7 @@ def handle_bgmi(message):
         else:
             response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
     else:
-        response = "✅ Usage :- /bgmi <target> <port> <time>"
+        response = "❌ You Are Not Authorized To Use This Command ❌."
 
     bot.reply_to(message, response)
 
@@ -259,7 +259,7 @@ def show_command_logs(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
         try:
-            with , "r") as file:
+            with open(LOG_FILE, "r") as file:
                 command_logs = file.readlines()
                 user_logs = [log for log in command_logs if f"UserID: {user_id}" in log]
                 if user_logs:
@@ -322,7 +322,7 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 300 (S)
+-> Attack Time : 230 (S)
 > After Attack Limit : 10 seconds
 -> Concurrents Attack : 3
 
@@ -373,4 +373,4 @@ def broadcast_message(message):
 
 
 
-bot.polling()
+bot.polling(w
