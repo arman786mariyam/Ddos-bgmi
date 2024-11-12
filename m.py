@@ -7,10 +7,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7390536137:AAH8TTygiaojk2psM27XK9iNKGz1sgkfERo')
+bot = telebot.TeleBot('7449871704:AAFZzltk148UXaN81JYB-Qk5QjbO-mjc1v8')
 
 # Admin user IDs
-admin_id = ["6889706404"]
+admin_id = ["7559484642"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -285,8 +285,8 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @ig_crazyy
-Official Channel :- @BHABHI_MODS
+Buy From :- @Mr_Arman5
+Official Channel :- @ZeroKillMod
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -303,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- @BHABHI_MODS'''
+✅Join :- @ZeroKillMod'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -322,13 +322,13 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 230 (S)
+-> Attack Time : 300 (S)
 > After Attack Limit : 10 seconds
 -> Concurrents Attack : 3
 
 Pr-ice List💸 :
 Day-->120 Rs
-Week-->200 Rs
+Week-->300 Rs
 Month-->600 Rs
 '''
     bot.reply_to(message, response)
