@@ -7,10 +7,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7449871704:AAFZzltk148UXaN81JYB-Qk5QjbO-mjc1v8')
+bot = telebot.TeleBot('8108341277:AAG4WAouzWOOMBoO5qhw4gj716HsXwYsowg')
 
 # Admin user IDs
-admin_id = ["7559484642"]
+admin_id = ["6101683433"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -285,8 +285,8 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @Mr_Arman5
-Official Channel :- @ZeroKillMod
+Buy From :- @ROLLEX_XD
+Official Channel :- @RollexOfficial
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -303,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- @ZeroKillMod'''
+✅Join :- @RollexOfficial'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
